@@ -20,6 +20,7 @@ with st.sidebar:
     font_size = st.select_slider("Choose font size", options = range(1,20))
     font = ImageFont.truetype("./data/JetBrainsMono-Medium.ttf", size=font_size)
 
+
 def start_predict():
     if file_uploaded and language:
         # Convert the uploaded file to an image
@@ -47,8 +48,6 @@ def start_predict():
             text_pos = (top_left[0], top_left[1] - font_size - rectangle_width)
             draw.text(text_pos, text, fill="blue", font=font)
 
-            with result_container:
-                st.write(text)
 
         # Display the processed image in the result container
         with result_container:
